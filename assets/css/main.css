@@ -3,22 +3,49 @@ body {
     left: 20%;
     font-family: 'Song Myung', serif;
     background-image: url('../images/bg.jpg');
-    color: whitesmoke;
+    color: black;
 }
 
-header {
-    text-align: center;
-    font-size: 40px;
+.header {
+    max-width: 100%;
+    content:url("../images/title.png");
 }
 
 .container {
     text-align: center;
+    border-width: 10px;
+    padding: 10px;
+    border-style: groove;
+    background-color: peru;
     margin-top: 50px;
+}
+
+#timeLimit{
+    font-size: 24px;
+}
+
+.questions {
+    font-size: 18px;
+}
+
+.answers {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+input {
+    margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 800px)
 {
+    .header {
+        max-width: 95%;
+        display: block;
+        margin: 0 auto;  
+    }
     body {
         position: static;
+        background-position: left;
     }
 }
