@@ -1,7 +1,8 @@
 $(document).ready(function(){
     
     let intervalId = undefined;
-    let timeLimit = 0; //timelimit in seconds
+    let timeCounter = 0; //timeCounter in seconds
+    let maxTime = 120;
     let unanswered_ans = 0;
     let incorrect_ans = 0;
     let correct_ans = 0;
@@ -20,6 +21,26 @@ $(document).ready(function(){
         question: "Which love interest of DareDevil lead the ancient originization known as 'The Hand'?",
         answers: ["Elektra","Stick","Storm","Typhoid Mary"],
         correct_ans: "Elektra"
+    },
+    {
+        question: " Who is S.H.I.E.L.D.s highest ranking agent?",
+        answers: ["Tony Stark","Steve Rogers","Nick Fury","Natalia Romanova"],
+        correct_ans: "Nick Fury"
+    },
+    {
+        question: "Captain America was frozen in which war?",
+        answers: ["World War I","World War II","Cold War","America Civil War"],
+        correct_ans: "World War II"
+    },
+    {
+        question: "The term Vampire use to describe Blade is which of the following?",
+        answers: ["Day Walker","Night Stalker","Vampire Killer","Blade of Death"],
+        correct_ans: "Day Walker"
+    },
+    {
+        question: "Ghost Rider is known as which of the following?",
+        answers: ["The Spirit of Hate","The Spirit Of Vengeance","The Guardian Devil","The Red Skull"],
+        correct_ans: "The Spirit Of Vengeance"
     }]
 
     function displayQuestionsAnswers(){
@@ -96,16 +117,16 @@ $(document).ready(function(){
         $('#gameBtn').text('Finished');
         $('#timeLimit').text('GAME ON!');
         clearInterval(intervalId);
-        timeLimit = 90;
+        timeCounter = maxTime;
         correct_ans = 0;
         incorrect_ans = 0;
         unanswered_ans = 0;
     }
 
     function timeLeft() {
-        if(timeLimit > 0){
-            $('#timeLimit').text(`Time Left: ${timeLimit}`);
-            timeLimit -= 1;
+        if(timeCounter > 0){
+            $('#timeLimit').text(`Time Remaining: ${timeCounter}`);
+            timeCounter -= 1;
         }
         else{
             displayResults();  
